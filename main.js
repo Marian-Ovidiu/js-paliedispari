@@ -23,7 +23,7 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto. */
 
     //dichairazione varibili
-var pariDispari = prompt('pari o dispari?');
+var pariDispari;
 var numero;
 var bool = false;
 var bool1 = -1;
@@ -31,12 +31,13 @@ var rnd;
 
     //inserimento e controllo del numero dell'utente
     do {
+      pariDispari = prompt('pari o dispari?');
       if(pariDispari === 'pari'){
         bool1 = 0;
       } else if (pariDispari === 'dispari') {
         bool1 = 1;
       } else {
-        alert('Hai inserito un valore diverso da pari/dispari. Riprova!')
+        alert('Hai inserito un valore diverso da pari/dispari. Riprova!');
         bool1 = -1;
       }
     } while(bool1 === -1);
@@ -58,10 +59,23 @@ var rnd = numeroRandom();
 
 var somma = random + numero;
 
+    // creazione funzione per controllo del pari o dispari
+
 function pariODispari(somma) {
   if(bool1 === 0){
     if (somma %2 === 0){
-      alert('Hai vinto');
+      alert('Hai vinto!! La somma è ' + somma);
+    } else {
+      alert('Hai Perso! La somma è ' + somma);
+    }
+  } else {
+    if (somma %2 !== 0){
+      alert('Hai vinto!! La somma è ' + somma);
+    } else {
+      alert('Hai Perso! La somma è ' + somma);
     }
   }
 }
+
+    //richiamo funzione pariODispari
+pariODispari(somma);
